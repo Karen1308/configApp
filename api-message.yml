@@ -20,7 +20,7 @@ management:
     env:
       enabled: true
 
-message: Este es un mensaje desde la configuracion por DEFECTO
+message: Este es un mensaje desde la configuracion por DEFECTO - Hola desde la configuracion de git
 
 # Agregar la siguiente linea en el 'Run/Debug Configurations'
 # --spring.profiles.active=dev
