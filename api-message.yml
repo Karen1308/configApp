@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: api-message
+#  cloud:
+#    config:
+#      enabled: false
+
+server:
+  port: 8081
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  info:
+    env:
+      enabled: true
+
+message: Este es un mensaje desde la configuracion por DEFECTO
+
+# Agregar la siguiente linea en el 'Run/Debug Configurations'
+# --spring.profiles.active=dev
+# Cambiar el nombre del ambiente en el que queremos trabajar dependiendo lo declarado en los yml
