@@ -6,11 +6,6 @@ server:
   port: ${PORT:${SERVER_PORT:0}}
 
 eureka:
-#  client:
-#    registerWithEureka: true
-#    fetchRegistry: true
-#    serviceUrl:
-#      defaultZone: http://localhost:8761/eureka/
   instance:
     hostname: localhost
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
@@ -27,4 +22,4 @@ management:
     env:
       enabled: true
 
-# message: Este es un mensaje desde la configuracion por DEFECTO - Hola desde la configuracion de git
+message: "Mensaje desde la configuracion por DEFECTO - ID de la instancia: "${random.value}
