@@ -1,3 +1,13 @@
 spring:
   application:
     name: movie-service
+  datasource:
+    url: jdbc:mysql://localhost:3366/movie-dev 
+    username: usr-movie
+    password: pwd-movie
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    show-sql: true
