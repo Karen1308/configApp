@@ -4,11 +4,6 @@ spring:
     url: jdbc:mysql://localhost:3366/movie-dev
     username: usr-movie
     password: pwd-movie
-    
-  sql:
-    init:
-      schema-locations: classpath:movie.sql
-      
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true
