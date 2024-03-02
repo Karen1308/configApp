@@ -22,4 +22,5 @@ management:
     env:
       enabled: true
 
-message: Mensaje desde la configuracion por DEFECTO - ID de la instancia ${random.value}
+idRandom: ${random.value}
+message: Mensaje desde la configuracion por DEFECTO
