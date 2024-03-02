@@ -12,9 +12,6 @@ spring:
     hibernate.ddl-auto: update
     generate-ddl: true
     show-sql: true
-  cloud:
-    config:
-      enabled: false
 
 eureka:
   client:
