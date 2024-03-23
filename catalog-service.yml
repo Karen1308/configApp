@@ -7,16 +7,44 @@ eureka:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
 management:
-  endpoint:
-    health:
-      show-details: always
   endpoints:
     web:
       exposure:
         include: '*'
-  info:
-    env:
+  health:
+    circuitbreakers:
       enabled: true
+  enpoint:
+    health:
+      show-details: always
+  metrics:
+    export:
+      zipkin:
+        enabled: true
+        baseUrl: http://localhost:9411
+
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      movie-service:
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 15000 # Espera en milisegundos en estado abierto
+        permittedNumberOfCallsInHalfOpenState: 3 # Si el servicio se recupero, espera 3 llamados para pasarlo a cerrado
+        registerHealthIndicator: true
+        allowHealthIndicatorToFail: false
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+  retry:
+    instances:
+      movie-service:
+        waitDuration: 1000
+        maxAttempts: 3 # Cantidad de reintentos
+        retryExceptions: # Excepcion contra la que queremos reintentar
+          - feign.FeignException$InternalServerError 
+          - feign.FeignException$ServiceUnavailable 
+
 
 idRandom: ${random.value}
 message: Mensaje desde la configuracion por DEFECTO
