@@ -17,12 +17,9 @@ management:
   enpoint:
     health:
       show-details: always
-  metrics:
-    export:
-      zipkin:
-        enabled: true
-        baseUrl: http://localhost:9411/zipkin/
-
+  traicing:
+    sampling:
+      probability: 1.0
 
 resilience4j:
   circuitbreaker:
