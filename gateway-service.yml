@@ -10,7 +10,7 @@ spring:
         - id: rootRoute
           uri: lb://gateway-service
           predicates:
-            - Path=/
+            - Path=/user
         - id: movieRoute
           uri: lb://movie-service
           predicates:
