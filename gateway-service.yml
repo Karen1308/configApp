@@ -18,7 +18,7 @@ spring:
         - id: catalogRoute
           uri: lb://catalog-service
           predicates:
-            - Path=/catalog/**
+            - Path=/api/v1/catalog/**
           filters:
             - AddRequestHeader=user-request-header, custom-user-request-header
             - AddResponseHeader=user-respons-header, custom-user-response-header
