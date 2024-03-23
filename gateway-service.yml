@@ -6,7 +6,7 @@ spring:
     name: gateway-service
   cloud:
     gateway:
-        - id: startRoute
+        - id: rootRoute
           uri: forward:/
           predicates:
             - Path=/
