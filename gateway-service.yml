@@ -6,6 +6,7 @@ spring:
     name: gateway-service
   cloud:
     gateway:
+      routes:
         - id: rootRoute
           uri: lb://gateway-service
           predicates:
