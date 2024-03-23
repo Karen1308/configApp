@@ -21,7 +21,7 @@ management:
     export:
       zipkin:
         enabled: true
-        baseUrl: http://localhost:9411
+        baseUrl: http://localhost:9411/zipkin/
 
 
 resilience4j:
