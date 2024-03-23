@@ -6,7 +6,10 @@ spring:
     name: gateway-service
   cloud:
     gateway:
-      routes:
+        - id: startRoute
+          uri: forward:/
+          predicates:
+            - Path=/
         - id: movieRoute
           uri: lb://movie-service
           predicates:
