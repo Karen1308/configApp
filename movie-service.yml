@@ -17,7 +17,7 @@ spring:
     port: 5672
 
 queue:
-  persona:
+  movie:
     name: lineMovieService
 
 server:
